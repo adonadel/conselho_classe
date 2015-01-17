@@ -1,0 +1,84 @@
+object FrmSenha: TFrmSenha
+  Left = 605
+  Top = 251
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Configura'#231#245'es de Sistema'
+  ClientHeight = 124
+  ClientWidth = 282
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  DesignSize = (
+    282
+    124)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RzButton1: TRzButton
+    Left = 63
+    Top = 95
+    Width = 81
+    Default = True
+    FrameColor = 7617536
+    ModalResult = 1
+    Anchors = [akRight, akBottom]
+    Caption = 'OK'
+    Color = 15791348
+    HotTrack = True
+    TabOrder = 0
+    OnClick = RzButton1Click
+  end
+  object RzButton2: TRzButton
+    Left = 151
+    Top = 95
+    Width = 81
+    Cancel = True
+    FrameColor = 7617536
+    ModalResult = 2
+    Anchors = [akRight, akBottom]
+    Caption = 'Cancel'
+    Color = 15791348
+    HotTrack = True
+    TabOrder = 1
+    OnClick = RzButton2Click
+  end
+  object RzGroupBox1: TRzGroupBox
+    Left = 8
+    Top = 4
+    Width = 265
+    Height = 82
+    Caption = 'Digite a Senha'
+    TabOrder = 2
+    Transparent = True
+    object RzLabel1: TRzLabel
+      Left = 16
+      Top = 18
+      Width = 236
+      Height = 26
+      Caption = 
+        'Acesso permitido somente a t'#233'cnicos ou pessoas '#13'Autorizadas pela' +
+        ' Empresa'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object EdtSenha: TEdit
+      Left = 16
+      Top = 51
+      Width = 233
+      Height = 21
+      OEMConvert = True
+      PasswordChar = '*'
+      TabOrder = 0
+    end
+  end
+end

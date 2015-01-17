@@ -1,0 +1,1154 @@
+inherited FRM_CadFunc: TFRM_CadFunc
+  Left = 191
+  Top = 115
+  Caption = 'FRM_CadFunc'
+  ClientHeight = 545
+  ClientWidth = 766
+  OldCreateOrder = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited PanTitulo: TRzPanel
+    Width = 766
+    Caption = 'Funcion'#225'rios'
+  end
+  inherited RzStatusBar1: TRzStatusBar
+    Top = 526
+    Width = 766
+    inherited RzStatusPane2: TRzStatusPane
+      Left = 621
+    end
+    inherited RzStatusPane3: TRzStatusPane
+      Width = 476
+    end
+  end
+  inherited PanBotoes: TRzPanel
+    Top = 456
+    Width = 766
+    inherited BtBuscar: TRzBitBtn
+      OnClick = BtBuscarClick
+    end
+    inherited BtStatus: TRzBitBtn
+      OnClick = BtStatusClick
+    end
+    inherited BtSair: TRzBitBtn
+      Left = 624
+      Width = 134
+    end
+  end
+  inherited PanDados: TRzPanel
+    Width = 766
+    Height = 405
+    inherited Paginas: TRzPageControl
+      Width = 758
+      Height = 397
+      FixedDimension = 19
+      inherited TabSheet1: TRzTabSheet
+        object RzLabel1: TRzLabel
+          Left = 8
+          Top = 8
+          Width = 33
+          Height = 13
+          Caption = 'C'#243'digo'
+        end
+        object RzLabel2: TRzLabel
+          Left = 280
+          Top = 128
+          Width = 60
+          Height = 13
+          Caption = 'Naturalidade'
+        end
+        object RzLabel3: TRzLabel
+          Left = 8
+          Top = 88
+          Width = 24
+          Height = 13
+          Caption = '*RG'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel4: TRzLabel
+          Left = 8
+          Top = 128
+          Width = 68
+          Height = 13
+          Caption = 'Nacionalidade'
+        end
+        object RzLabel5: TRzLabel
+          Left = 280
+          Top = 88
+          Width = 29
+          Height = 13
+          Caption = '*CPF'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel6: TRzLabel
+          Left = 8
+          Top = 208
+          Width = 103
+          Height = 13
+          Caption = '*Data Nascimento'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel7: TRzLabel
+          Left = 8
+          Top = 48
+          Width = 38
+          Height = 13
+          Caption = '*Nome'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel9: TRzLabel
+          Left = 8
+          Top = 168
+          Width = 53
+          Height = 13
+          Caption = 'Sexo (M/F)'
+        end
+        object RzLabel11: TRzLabel
+          Left = 280
+          Top = 208
+          Width = 105
+          Height = 13
+          Caption = '*Data de Cadastro'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel12: TRzLabel
+          Left = 280
+          Top = 168
+          Width = 25
+          Height = 13
+          Caption = 'Email'
+        end
+        object RzLabel13: TRzLabel
+          Left = 8
+          Top = 336
+          Width = 74
+          Height = 13
+          Caption = '*Observa'#231#227'o'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel15: TRzLabel
+          Left = 192
+          Top = 256
+          Width = 33
+          Height = 13
+          Caption = 'Cidade'
+        end
+        object RzLabel16: TRzLabel
+          Left = 376
+          Top = 296
+          Width = 54
+          Height = 13
+          Caption = 'Logradouro'
+        end
+        object RzLabel17: TRzLabel
+          Left = 8
+          Top = 296
+          Width = 78
+          Height = 13
+          Caption = 'Tipo Logradouro'
+        end
+        object RzLabel18: TRzLabel
+          Left = 8
+          Top = 256
+          Width = 30
+          Height = 13
+          Caption = '*CEP'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel20: TRzLabel
+          Left = 376
+          Top = 256
+          Width = 14
+          Height = 13
+          Caption = 'UF'
+        end
+        object RzLabel21: TRzLabel
+          Left = 408
+          Top = 256
+          Width = 27
+          Height = 13
+          Caption = 'Bairro'
+        end
+        object DBnomefunc: TRzDBEdit
+          Left = 8
+          Top = 64
+          Width = 537
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'NOME_FUNC'
+          CharCase = ecUpperCase
+          TabOrder = 0
+        end
+        object DBdatanascfunc: TRzDBEdit
+          Left = 8
+          Top = 224
+          Width = 265
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'DATANASC_FUNC'
+          CharCase = ecUpperCase
+          MaxLength = 10
+          TabOrder = 7
+        end
+        object DBnatufunc: TRzDBEdit
+          Left = 280
+          Top = 144
+          Width = 265
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'NATUR_FUNC'
+          CharCase = ecUpperCase
+          TabOrder = 4
+        end
+        object DBcpffunc: TRzDBEdit
+          Left = 280
+          Top = 104
+          Width = 265
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'CPF_FUNC'
+          CharCase = ecUpperCase
+          MaxLength = 14
+          TabOrder = 2
+        end
+        object DBrgfunc: TRzDBEdit
+          Left = 8
+          Top = 104
+          Width = 265
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'RG_FUNC'
+          CharCase = ecUpperCase
+          TabOrder = 1
+        end
+        object DBsexofunc: TRzDBEdit
+          Left = 8
+          Top = 184
+          Width = 265
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'SEXO_FUNC'
+          CharCase = ecUpperCase
+          TabOrder = 5
+        end
+        object DBnaciofunc: TRzDBEdit
+          Left = 8
+          Top = 144
+          Width = 265
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'NACIO_FUNC'
+          CharCase = ecUpperCase
+          TabOrder = 3
+        end
+        object DBemailfunc: TRzDBEdit
+          Left = 280
+          Top = 184
+          Width = 265
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'EMAIL_FUNC'
+          CharCase = ecUpperCase
+          TabOrder = 6
+        end
+        object DBobsfunc: TRzDBEdit
+          Left = 8
+          Top = 352
+          Width = 729
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'OBS_FUNC'
+          CharCase = ecUpperCase
+          TabOrder = 10
+        end
+        object DBdatacadfunc: TRzDBEdit
+          Left = 280
+          Top = 224
+          Width = 265
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'DATACAD_FUNC'
+          ReadOnly = True
+          CharCase = ecUpperCase
+          Color = clInfoBk
+          MaxLength = 10
+          TabOrder = 8
+        end
+        object DBdesctipologfunc: TRzDBEdit
+          Left = 8
+          Top = 312
+          Width = 361
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'DESCRI_TIPOLOG'
+          CharCase = ecUpperCase
+          Enabled = False
+          TabOrder = 12
+        end
+        object DBlografunc: TRzDBEdit
+          Left = 376
+          Top = 312
+          Width = 361
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'LOGRA_CEP'
+          CharCase = ecUpperCase
+          Enabled = False
+          TabOrder = 13
+        end
+        object DBcidfunc: TRzDBEdit
+          Left = 192
+          Top = 272
+          Width = 177
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'NOME_CID'
+          CharCase = ecUpperCase
+          Enabled = False
+          TabOrder = 14
+        end
+        object DBbaifunc: TRzDBEdit
+          Left = 408
+          Top = 272
+          Width = 329
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'NOME_BAI'
+          CharCase = ecUpperCase
+          Enabled = False
+          TabOrder = 15
+        end
+        object DBuffunc: TRzDBEdit
+          Left = 376
+          Top = 272
+          Width = 25
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'UF_CID'
+          CharCase = ecUpperCase
+          Enabled = False
+          TabOrder = 16
+        end
+        object DBcepfunc: TRzDBButtonEdit
+          Left = 8
+          Top = 272
+          Width = 177
+          Height = 21
+          DataSource = DSFunc
+          DataField = 'IDCEP'
+          CharCase = ecUpperCase
+          MaxLength = 9
+          TabOrder = 9
+          AltBtnKind = bkFolder
+          ButtonKind = bkFind
+          AltBtnVisible = True
+          OnButtonClick = DBcepfuncButtonClick
+        end
+        object DBImgfunc: TDBImage
+          Left = 552
+          Top = 12
+          Width = 193
+          Height = 233
+          Cursor = crHandPoint
+          DataField = 'FOTO_FUNC'
+          DataSource = DSFunc
+          Stretch = True
+          TabOrder = 11
+          OnClick = DBImgfuncClick
+        end
+      end
+      object TabSheet2: TRzTabSheet
+        Color = 13294508
+        Caption = 'Cargos'
+        object RzLabel8: TRzLabel
+          Left = 3
+          Top = 52
+          Width = 472
+          Height = 27
+          Caption = 'Lista de todos os cargos exercidos pelo funcion'#225'rio'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -19
+          Font.Name = 'Comic Sans MS'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel10: TRzLabel
+          Left = 584
+          Top = 16
+          Width = 135
+          Height = 23
+          Caption = '<F5> Novo Cargo'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Comic Sans MS'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel14: TRzLabel
+          Left = 584
+          Top = 40
+          Width = 154
+          Height = 23
+          Caption = '<F6> Sair do Cargo'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Comic Sans MS'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzDBGrid1: TRzDBGrid
+          Left = 2
+          Top = 78
+          Width = 737
+          Height = 292
+          DataSource = DScargos
+          DefaultDrawing = True
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'MS Sans Serif'
+          TitleFont.Style = []
+          OnKeyDown = RzDBGrid1KeyDown
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'IDRELACARFUN'
+              Title.Caption = 'C'#243'digo Rela'#231#227'o'
+              Title.Font.Charset = ANSI_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -13
+              Title.Font.Name = 'Comic Sans MS'
+              Title.Font.Style = [fsBold]
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DESC_CAR'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -11
+              Font.Name = 'Comic Sans MS'
+              Font.Style = []
+              Title.Caption = 'Descri'#231#227'o'
+              Title.Font.Charset = ANSI_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -13
+              Title.Font.Name = 'Comic Sans MS'
+              Title.Font.Style = [fsBold]
+              Width = 494
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'STATUS_RELCARFUN'
+              Title.Caption = 'Status Rela'#231#227'o'
+              Title.Font.Charset = ANSI_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -13
+              Title.Font.Name = 'Comic Sans MS'
+              Title.Font.Style = [fsBold]
+              Visible = True
+            end>
+        end
+      end
+      object TabSheet3: TRzTabSheet
+        Color = 13294508
+        Caption = 'Disciplinas'
+        object RzLabel19: TRzLabel
+          Left = 552
+          Top = 32
+          Width = 181
+          Height = 23
+          Caption = '<F6> Sair da Disciplina'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Comic Sans MS'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzLabel22: TRzLabel
+          Left = 552
+          Top = 8
+          Width = 162
+          Height = 23
+          Caption = '<F5> Nova Disciplina'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Comic Sans MS'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object RzDBGrid2: TRzDBGrid
+          Left = 2
+          Top = 73
+          Width = 737
+          Height = 297
+          DataSource = DSDiscProf
+          DefaultDrawing = True
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'MS Sans Serif'
+          TitleFont.Style = []
+          OnKeyDown = RzDBGrid2KeyDown
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'IDRELACAO'
+              Title.Caption = 'C'#243'digo'
+              Title.Font.Charset = ANSI_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -13
+              Title.Font.Name = 'Comic Sans MS'
+              Title.Font.Style = [fsBold]
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DESCR_DISC'
+              Title.Caption = 'Disciplina'
+              Title.Font.Charset = ANSI_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -13
+              Title.Font.Name = 'Comic Sans MS'
+              Title.Font.Style = [fsBold]
+              Width = 251
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DESCRICAO_CUR'
+              Title.Caption = 'Curso'
+              Title.Font.Charset = ANSI_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -13
+              Title.Font.Name = 'Comic Sans MS'
+              Title.Font.Style = [fsBold]
+              Width = 201
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'ANO_REL'
+              Title.Caption = 'Ano'
+              Title.Font.Charset = ANSI_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -13
+              Title.Font.Name = 'Comic Sans MS'
+              Title.Font.Style = [fsBold]
+              Width = 61
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'SEMESTRE_REL'
+              Title.Caption = 'Semestre'
+              Title.Font.Charset = ANSI_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -13
+              Title.Font.Name = 'Comic Sans MS'
+              Title.Font.Style = [fsBold]
+              Width = 69
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'STATUS_REL'
+              Title.Caption = 'Status'
+              Title.Font.Charset = ANSI_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -13
+              Title.Font.Name = 'Comic Sans MS'
+              Title.Font.Style = [fsBold]
+              Visible = True
+            end>
+        end
+      end
+    end
+  end
+  inherited BuscaRapida: TRzButtonEdit
+    Top = 97
+    OnKeyDown = BuscaRapidaKeyDown
+  end
+  object SQLFunc: TSQLDataSet
+    CommandText = 
+      'SELECT'#13#10#13#10'FUNCIONARIO.IDFUNC,'#13#10'FUNCIONARIO.IDCEP,'#13#10'FUNCIONARIO.N' +
+      'OME_FUNC,'#13#10'FUNCIONARIO.DATANASC_FUNC,'#13#10'FUNCIONARIO.CPF_FUNC,'#13#10'FU' +
+      'NCIONARIO.RG_FUNC,'#13#10'FUNCIONARIO.NACIO_FUNC,'#13#10'FUNCIONARIO.NATUR_F' +
+      'UNC,'#13#10'FUNCIONARIO.SEXO_FUNC,'#13#10'FUNCIONARIO.EMAIL_FUNC,'#13#10'FUNCIONAR' +
+      'IO.OBS_FUNC,'#13#10'FUNCIONARIO.DATACAD_FUNC,'#13#10'FUNCIONARIO.FOTO_FUNC,'#13 +
+      #10'FUNCIONARIO.STATUS_FUNC,'#13#10#13#10'CEPS.LOGRA_CEP,'#13#10'TIPOLOGRA.DESCRI_T' +
+      'IPOLOG,'#13#10'CIDADES.NOME_CID,'#13#10'CIDADES.UF_CID,'#13#10'BAIRROS.NOME_BAI'#13#10#13 +
+      #10'FROM FUNCIONARIO'#13#10#13#10'LEFT OUTER JOIN CEPS ON (CEPS.IDCEP=FUNCION' +
+      'ARIO.IDCEP)'#13#10'LEFT OUTER JOIN TIPOLOGRA ON (TIPOLOGRA.IDTIPOLOG=C' +
+      'EPS.IDTIPOLOG)'#13#10'LEFT OUTER JOIN BAIRROS ON (BAIRROS.IDBAI=CEPS.I' +
+      'DBAI)'#13#10'LEFT OUTER JOIN CIDADES ON (CIDADES.IDCID=CEPS.IDCID)'#13#10#13#10 +
+      #13#10'WHERE  FUNCIONARIO.IDFUNC = :PARFUN'
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftString
+        Name = 'PARFUN'
+        ParamType = ptInput
+        Value = 0
+      end>
+    SQLConnection = DM.Conexao
+    Left = 240
+    Top = 16
+    object SQLFuncIDFUNC: TIntegerField
+      FieldName = 'IDFUNC'
+      Required = True
+    end
+    object SQLFuncIDCEP: TStringField
+      FieldName = 'IDCEP'
+      Size = 8
+    end
+    object SQLFuncNOME_FUNC: TStringField
+      FieldName = 'NOME_FUNC'
+      Size = 50
+    end
+    object SQLFuncDATANASC_FUNC: TDateField
+      FieldName = 'DATANASC_FUNC'
+    end
+    object SQLFuncCPF_FUNC: TStringField
+      FieldName = 'CPF_FUNC'
+      Size = 15
+    end
+    object SQLFuncRG_FUNC: TStringField
+      FieldName = 'RG_FUNC'
+      Size = 13
+    end
+    object SQLFuncNACIO_FUNC: TStringField
+      FieldName = 'NACIO_FUNC'
+      Size = 32
+    end
+    object SQLFuncNATUR_FUNC: TStringField
+      FieldName = 'NATUR_FUNC'
+      Size = 32
+    end
+    object SQLFuncSEXO_FUNC: TStringField
+      FieldName = 'SEXO_FUNC'
+      Size = 1
+    end
+    object SQLFuncEMAIL_FUNC: TStringField
+      FieldName = 'EMAIL_FUNC'
+      Size = 100
+    end
+    object SQLFuncOBS_FUNC: TStringField
+      FieldName = 'OBS_FUNC'
+      Size = 50
+    end
+    object SQLFuncDATACAD_FUNC: TDateField
+      FieldName = 'DATACAD_FUNC'
+    end
+    object SQLFuncFOTO_FUNC: TBlobField
+      FieldName = 'FOTO_FUNC'
+      Size = 1
+    end
+    object SQLFuncSTATUS_FUNC: TStringField
+      FieldName = 'STATUS_FUNC'
+      Size = 1
+    end
+    object SQLFuncLOGRA_CEP: TStringField
+      FieldName = 'LOGRA_CEP'
+      ProviderFlags = []
+      Size = 100
+    end
+    object SQLFuncDESCRI_TIPOLOG: TStringField
+      FieldName = 'DESCRI_TIPOLOG'
+      ProviderFlags = []
+      Size = 50
+    end
+    object SQLFuncNOME_CID: TStringField
+      FieldName = 'NOME_CID'
+      ProviderFlags = []
+      Size = 50
+    end
+    object SQLFuncUF_CID: TStringField
+      FieldName = 'UF_CID'
+      ProviderFlags = []
+      Size = 2
+    end
+    object SQLFuncNOME_BAI: TStringField
+      FieldName = 'NOME_BAI'
+      ProviderFlags = []
+      Size = 30
+    end
+  end
+  object Provider: TDataSetProvider
+    DataSet = SQLFunc
+    Left = 280
+    Top = 16
+  end
+  object CDSFunc: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'Provider'
+    Left = 320
+    Top = 16
+    object CDSFuncIDFUNC: TIntegerField
+      FieldName = 'IDFUNC'
+      Required = True
+    end
+    object CDSFuncIDCEP: TStringField
+      FieldName = 'IDCEP'
+      OnValidate = CDSFuncIDCEPValidate
+      EditMask = '99999\-999;0;_'
+      Size = 8
+    end
+    object CDSFuncNOME_FUNC: TStringField
+      FieldName = 'NOME_FUNC'
+      Size = 50
+    end
+    object CDSFuncDATANASC_FUNC: TDateField
+      FieldName = 'DATANASC_FUNC'
+      EditMask = '99\/99\/9999;1;_'
+    end
+    object CDSFuncCPF_FUNC: TStringField
+      FieldName = 'CPF_FUNC'
+      EditMask = '999\.999\.999\-99;0;_'
+      Size = 15
+    end
+    object CDSFuncRG_FUNC: TStringField
+      FieldName = 'RG_FUNC'
+      Size = 13
+    end
+    object CDSFuncNACIO_FUNC: TStringField
+      FieldName = 'NACIO_FUNC'
+      Size = 32
+    end
+    object CDSFuncNATUR_FUNC: TStringField
+      FieldName = 'NATUR_FUNC'
+      Size = 32
+    end
+    object CDSFuncSEXO_FUNC: TStringField
+      FieldName = 'SEXO_FUNC'
+      Size = 1
+    end
+    object CDSFuncEMAIL_FUNC: TStringField
+      FieldName = 'EMAIL_FUNC'
+      Size = 100
+    end
+    object CDSFuncOBS_FUNC: TStringField
+      FieldName = 'OBS_FUNC'
+      Size = 50
+    end
+    object CDSFuncDATACAD_FUNC: TDateField
+      FieldName = 'DATACAD_FUNC'
+      EditMask = '99\/99\/9999;1;_'
+    end
+    object CDSFuncFOTO_FUNC: TBlobField
+      FieldName = 'FOTO_FUNC'
+      Size = 1
+    end
+    object CDSFuncSTATUS_FUNC: TStringField
+      FieldName = 'STATUS_FUNC'
+      Size = 1
+    end
+    object CDSFuncLOGRA_CEP: TStringField
+      FieldName = 'LOGRA_CEP'
+      ProviderFlags = []
+      Size = 100
+    end
+    object CDSFuncDESCRI_TIPOLOG: TStringField
+      FieldName = 'DESCRI_TIPOLOG'
+      ProviderFlags = []
+      Size = 50
+    end
+    object CDSFuncNOME_CID: TStringField
+      FieldName = 'NOME_CID'
+      ProviderFlags = []
+      Size = 50
+    end
+    object CDSFuncUF_CID: TStringField
+      FieldName = 'UF_CID'
+      ProviderFlags = []
+      Size = 2
+    end
+    object CDSFuncNOME_BAI: TStringField
+      FieldName = 'NOME_BAI'
+      ProviderFlags = []
+      Size = 30
+    end
+    object CDSFuncSQLcargos: TDataSetField
+      FieldName = 'SQLcargos'
+    end
+    object CDSFuncSQLDiscProf: TDataSetField
+      FieldName = 'SQLDiscProf'
+    end
+  end
+  object DSFunc: TDataSource
+    DataSet = CDSFunc
+    Left = 360
+    Top = 16
+  end
+  object OpenPictureDialog: TOpenPictureDialog
+    Left = 501
+    Top = 91
+  end
+  object CDScargos: TClientDataSet
+    Aggregates = <>
+    DataSetField = CDSFuncSQLcargos
+    Params = <>
+    Left = 320
+    Top = 91
+    object CDScargosIDCAR: TIntegerField
+      FieldName = 'IDCAR'
+      Required = True
+      OnValidate = CDScargosIDCARValidate
+    end
+    object CDScargosIDCURSO: TIntegerField
+      FieldName = 'IDCURSO'
+      OnValidate = CDScargosIDCURSOValidate
+    end
+    object CDScargosDESCRICAO_CUR: TStringField
+      FieldName = 'DESCRICAO_CUR'
+      ProviderFlags = []
+    end
+    object CDScargosSTATUS_CUR: TStringField
+      FieldName = 'STATUS_CUR'
+      ProviderFlags = []
+      Size = 1
+    end
+    object CDScargosDESC_CAR: TStringField
+      FieldName = 'DESC_CAR'
+      ProviderFlags = []
+      Size = 30
+    end
+    object CDScargosSTATUS_CAR: TStringField
+      FieldName = 'STATUS_CAR'
+      ProviderFlags = []
+      Size = 1
+    end
+    object CDScargosDTINI_RELCARFUN: TDateField
+      FieldName = 'DTINI_RELCARFUN'
+    end
+    object CDScargosDTFIM_RELCARFUN: TDateField
+      FieldName = 'DTFIM_RELCARFUN'
+    end
+    object CDScargosIDRELACARFUN: TIntegerField
+      FieldName = 'IDRELACARFUN'
+      Required = True
+    end
+    object CDScargosIDFUNC: TIntegerField
+      FieldName = 'IDFUNC'
+      Required = True
+    end
+    object CDScargosSTATUS_RELCARFUN: TStringField
+      FieldName = 'STATUS_RELCARFUN'
+      Required = True
+      Size = 1
+    end
+  end
+  object DScargos: TDataSource
+    DataSet = CDScargos
+    Left = 365
+    Top = 91
+  end
+  object SQLcargos: TSQLDataSet
+    CommandText = 
+      'SELECT'#13#10#13#10'RELCARFUN.IDRELACARFUN,'#13#10'RELCARFUN.IDFUNC,'#13#10'RELCARFUN.' +
+      'IDCAR,'#13#10'RELCARFUN.IDCURSO,'#13#10#13#10'CURSOS.DESCRICAO_CUR,'#13#10'CURSOS.STAT' +
+      'US_CUR,'#13#10'CARGOS.DESC_CAR,'#13#10'CARGOS.STATUS_CAR,'#13#10#13#10'RELCARFUN.DTINI' +
+      '_RELCARFUN,'#13#10'RELCARFUN.STATUS_RELCARFUN,'#13#10'RELCARFUN.DTFIM_RELCAR' +
+      'FUN'#13#10#13#10#13#10'FROM RELCARFUN'#13#10#13#10#13#10'LEFT OUTER JOIN CARGOS ON (CARGOS.I' +
+      'DCAR=RELCARFUN.IDCAR)'#13#10'LEFT OUTER JOIN CURSOS ON (CURSOS.IDCURSO' +
+      '=RELCARFUN.IDCURSO)'#13#10#13#10'WHERE  RELCARFUN.IDFUNC =  :IDFUNC '
+    DataSource = DSliga
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'IDFUNC'
+        ParamType = ptInput
+        Size = 4
+      end>
+    SQLConnection = DM.Conexao
+    Left = 240
+    Top = 96
+    object SQLcargosIDCAR: TIntegerField
+      FieldName = 'IDCAR'
+      Required = True
+    end
+    object SQLcargosIDCURSO: TIntegerField
+      FieldName = 'IDCURSO'
+    end
+    object SQLcargosDESCRICAO_CUR: TStringField
+      FieldName = 'DESCRICAO_CUR'
+      ProviderFlags = []
+    end
+    object SQLcargosSTATUS_CUR: TStringField
+      FieldName = 'STATUS_CUR'
+      ProviderFlags = []
+      Size = 1
+    end
+    object SQLcargosDESC_CAR: TStringField
+      FieldName = 'DESC_CAR'
+      ProviderFlags = []
+      Size = 30
+    end
+    object SQLcargosSTATUS_CAR: TStringField
+      FieldName = 'STATUS_CAR'
+      ProviderFlags = []
+      Size = 1
+    end
+    object SQLcargosDTINI_RELCARFUN: TDateField
+      FieldName = 'DTINI_RELCARFUN'
+    end
+    object SQLcargosDTFIM_RELCARFUN: TDateField
+      FieldName = 'DTFIM_RELCARFUN'
+    end
+    object SQLcargosIDRELACARFUN: TIntegerField
+      FieldName = 'IDRELACARFUN'
+      Required = True
+    end
+    object SQLcargosIDFUNC: TIntegerField
+      FieldName = 'IDFUNC'
+      Required = True
+    end
+    object SQLcargosSTATUS_RELCARFUN: TStringField
+      FieldName = 'STATUS_RELCARFUN'
+      Required = True
+      Size = 1
+    end
+  end
+  object DSliga: TDataSource
+    DataSet = SQLFunc
+    Left = 240
+    Top = 59
+  end
+  object DSDiscProf: TDataSource
+    DataSet = CDSDiscProf
+    Left = 357
+    Top = 163
+  end
+  object CDSDiscProf: TClientDataSet
+    Aggregates = <>
+    DataSetField = CDSFuncSQLDiscProf
+    Params = <>
+    Left = 317
+    Top = 160
+    object CDSDiscProfIDRELACAO: TIntegerField
+      FieldName = 'IDRELACAO'
+      Required = True
+    end
+    object CDSDiscProfIDFUNC: TIntegerField
+      FieldName = 'IDFUNC'
+      Required = True
+    end
+    object CDSDiscProfIDDISCUR: TIntegerField
+      FieldName = 'IDDISCUR'
+      Required = True
+      OnValidate = CDSDiscProfIDDISCURValidate
+    end
+    object CDSDiscProfANO_REL: TIntegerField
+      FieldName = 'ANO_REL'
+      Required = True
+    end
+    object CDSDiscProfSEMESTRE_REL: TStringField
+      FieldName = 'SEMESTRE_REL'
+      Required = True
+      Size = 2
+    end
+    object CDSDiscProfSTATUS_REL: TStringField
+      FieldName = 'STATUS_REL'
+      Required = True
+      Size = 1
+    end
+    object CDSDiscProfIDDISC: TIntegerField
+      FieldName = 'IDDISC'
+      ProviderFlags = []
+    end
+    object CDSDiscProfANOFASE_DISCUR: TIntegerField
+      FieldName = 'ANOFASE_DISCUR'
+      ProviderFlags = []
+    end
+    object CDSDiscProfNUMAULAS_DISCUR: TIntegerField
+      FieldName = 'NUMAULAS_DISCUR'
+      ProviderFlags = []
+    end
+    object CDSDiscProfTIPOSEMANU_DISCUR: TStringField
+      FieldName = 'TIPOSEMANU_DISCUR'
+      ProviderFlags = []
+      Size = 1
+    end
+    object CDSDiscProfOBS_DISCUR: TStringField
+      FieldName = 'OBS_DISCUR'
+      ProviderFlags = []
+      Size = 35
+    end
+    object CDSDiscProfSTATUS_DISCUR: TStringField
+      FieldName = 'STATUS_DISCUR'
+      ProviderFlags = []
+      Size = 1
+    end
+    object CDSDiscProfDESCR_DISC: TStringField
+      FieldName = 'DESCR_DISC'
+      ProviderFlags = []
+      Size = 50
+    end
+    object CDSDiscProfSTATUS_DISC: TStringField
+      FieldName = 'STATUS_DISC'
+      ProviderFlags = []
+      Size = 1
+    end
+    object CDSDiscProfIDCURSO: TIntegerField
+      FieldName = 'IDCURSO'
+      ProviderFlags = []
+    end
+    object CDSDiscProfDESCRICAO_CUR: TStringField
+      FieldName = 'DESCRICAO_CUR'
+      ProviderFlags = []
+    end
+    object CDSDiscProfSTATUS_CUR: TStringField
+      FieldName = 'STATUS_CUR'
+      ProviderFlags = []
+      Size = 1
+    end
+  end
+  object SQLDiscProf: TSQLDataSet
+    CommandText = 
+      'SELECT'#13#10#13#10'DISCPROF.IDRELACAO,'#13#10'DISCPROF.IDFUNC,'#13#10'DISCPROF.IDDISC' +
+      'UR,'#13#10'DISCPROF.ANO_REL,'#13#10'DISCPROF.SEMESTRE_REL,'#13#10'DISCPROF.STATUS_' +
+      'REL,'#13#10#13#10#13#10'DISCURSO.IDCURSO,'#13#10'DISCURSO.IDDISC,'#13#10'DISCURSO.ANOFASE_' +
+      'DISCUR,'#13#10'DISCURSO.NUMAULAS_DISCUR,'#13#10'DISCURSO.TIPOSEMANU_DISCUR,'#13 +
+      #10'DISCURSO.OBS_DISCUR,'#13#10'DISCURSO.STATUS_DISCUR,'#13#10#13#10#13#10'DISCIPLINAS.' +
+      'DESCR_DISC,'#13#10'DISCIPLINAS.STATUS_DISC,'#13#10#13#10'CURSOS.DESCRICAO_CUR,'#13#10 +
+      'CURSOS.STATUS_CUR'#13#10#13#10#13#10'FROM DISCPROF'#13#10#13#10'LEFT OUTER JOIN DISCURSO' +
+      ' ON (DISCURSO.IDDISCUR=DISCPROF.IDDISCUR)'#13#10'LEFT OUTER JOIN DISCI' +
+      'PLINAS ON (DISCIPLINAS.IDDISC=DISCURSO.IDDISC)'#13#10'LEFT OUTER JOIN ' +
+      'CURSOS ON (CURSOS.IDCURSO=DISCURSO.IDCURSO)'#13#10#13#10'WHERE DISCPROF.ID' +
+      'FUNC = :IDFUNC'
+    DataSource = DSliga
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftUnknown
+        Name = 'IDFUNC'
+        ParamType = ptInput
+      end>
+    SQLConnection = DM.Conexao
+    Left = 240
+    Top = 163
+    object SQLDiscProfIDRELACAO: TIntegerField
+      FieldName = 'IDRELACAO'
+      Required = True
+    end
+    object SQLDiscProfIDFUNC: TIntegerField
+      FieldName = 'IDFUNC'
+      Required = True
+    end
+    object SQLDiscProfIDDISCUR: TIntegerField
+      FieldName = 'IDDISCUR'
+      Required = True
+    end
+    object SQLDiscProfANO_REL: TIntegerField
+      FieldName = 'ANO_REL'
+      Required = True
+    end
+    object SQLDiscProfSEMESTRE_REL: TStringField
+      FieldName = 'SEMESTRE_REL'
+      Required = True
+      Size = 2
+    end
+    object SQLDiscProfSTATUS_REL: TStringField
+      FieldName = 'STATUS_REL'
+      Required = True
+      Size = 1
+    end
+    object SQLDiscProfIDDISC: TIntegerField
+      FieldName = 'IDDISC'
+      ProviderFlags = []
+    end
+    object SQLDiscProfANOFASE_DISCUR: TIntegerField
+      FieldName = 'ANOFASE_DISCUR'
+      ProviderFlags = []
+    end
+    object SQLDiscProfNUMAULAS_DISCUR: TIntegerField
+      FieldName = 'NUMAULAS_DISCUR'
+      ProviderFlags = []
+    end
+    object SQLDiscProfTIPOSEMANU_DISCUR: TStringField
+      FieldName = 'TIPOSEMANU_DISCUR'
+      ProviderFlags = []
+      Size = 1
+    end
+    object SQLDiscProfOBS_DISCUR: TStringField
+      FieldName = 'OBS_DISCUR'
+      ProviderFlags = []
+      Size = 35
+    end
+    object SQLDiscProfSTATUS_DISCUR: TStringField
+      FieldName = 'STATUS_DISCUR'
+      ProviderFlags = []
+      Size = 1
+    end
+    object SQLDiscProfDESCR_DISC: TStringField
+      FieldName = 'DESCR_DISC'
+      ProviderFlags = []
+      Size = 50
+    end
+    object SQLDiscProfSTATUS_DISC: TStringField
+      FieldName = 'STATUS_DISC'
+      ProviderFlags = []
+      Size = 1
+    end
+    object SQLDiscProfIDCURSO: TIntegerField
+      FieldName = 'IDCURSO'
+      ProviderFlags = []
+    end
+    object SQLDiscProfDESCRICAO_CUR: TStringField
+      FieldName = 'DESCRICAO_CUR'
+      ProviderFlags = []
+    end
+    object SQLDiscProfSTATUS_CUR: TStringField
+      FieldName = 'STATUS_CUR'
+      ProviderFlags = []
+      Size = 1
+    end
+  end
+end

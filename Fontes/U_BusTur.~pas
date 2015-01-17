@@ -1,0 +1,144 @@
+unit U_BusTur;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UFrmModeloBusca, RzButton, RzRadGrp, RzPanel, ExtCtrls,
+  ComCtrls, Grids, DBGrids, RzDBGrid, RzBckgnd, FMTBcd, DB, DBClient,
+  Provider, SqlExpr, StdCtrls, RpCon, RpConDS, RpBase, RpSystem, RpDefine,
+  RpRave;
+
+type
+  TFRM_BUSTUR = class(TFrm_ModeloBusca)
+    SQLbustur: TSQLDataSet;
+    PROVIDERBUS: TDataSetProvider;
+    CDSbustur: TClientDataSet;
+    SQLbusturIDTUR: TIntegerField;
+    SQLbusturIDCURSO: TIntegerField;
+    SQLbusturNUM_TUR: TStringField;
+    SQLbusturTURNO_TUR: TStringField;
+    SQLbusturANO_TUR: TIntegerField;
+    SQLbusturSTATUS_TUR: TStringField;
+    SQLbusturDESCRICAO_CUR: TStringField;
+    CDSbusturIDTUR: TIntegerField;
+    CDSbusturIDCURSO: TIntegerField;
+    CDSbusturNUM_TUR: TStringField;
+    CDSbusturTURNO_TUR: TStringField;
+    CDSbusturANO_TUR: TIntegerField;
+    CDSbusturSTATUS_TUR: TStringField;
+    CDSbusturDESCRICAO_CUR: TStringField;
+    CODINI: TLabeledEdit;
+    CODFIM: TLabeledEdit;
+    NUM: TLabeledEdit;
+    TUR: TLabeledEdit;
+    ANO: TLabeledEdit;
+    Cur: TLabeledEdit;
+    bTiMPRIMIR: TRzBitBtn;
+    DSbustur: TDataSource;
+    RaveProj: TRvProject;
+    RvSystem1: TRvSystem;
+    RvDataSetConnection1: TRvDataSetConnection;
+    procedure GridDadosDblClick(Sender: TObject);
+    procedure GrupoFiltroChange(Sender: TObject; Index: Integer;
+      NewState: TCheckBoxState);
+    procedure FormCreate(Sender: TObject);
+    procedure bTiMPRIMIRClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_BUSTUR: TFRM_BUSTUR;
+  SqlOriginal, SqlFiltro, SqlOrdem : String;
+
+implementation
+
+uses UDM, U_CadTur;
+
+{$R *.dfm}
+
+procedure TFRM_BUSTUR.GridDadosDblClick(Sender: TObject);
+begin
+ IF (QuemChamou = 'TURMA') THEN
+    BEGIN
+       FRM_CADTUR.SQLtur.ParamByName('PARTUR').AsInteger := CDSbusturIDTUR.AsInteger;
+       CLOSE;
+    END;
+
+end;
+
+procedure TFRM_BUSTUR.GrupoFiltroChange(Sender: TObject; Index: Integer;
+  NewState: TCheckBoxState);
+begin
+   //Filtrando por Código
+  IF (GrupoFiltro.ItemChecked[0] =  TRUE) THEN
+    BEGIN
+      CODINI.Enabled := True;
+      CODFIM.Enabled := True;
+    END
+  ELSE
+    BEGIN
+      codini.Clear;
+      codfim.Clear;
+      CODINI.Enabled := False;
+      CODFIM.Enabled := False;
+    END;
+
+  //Filtrando por Descricao
+  IF (GrupoFiltro.ItemChecked[1] =  TRUE) THEN
+    BEGIN
+      num.Enabled := True;
+    END
+  ELSE
+    BEGIN
+     num.Clear;
+      num.Enabled  := False;
+    END;
+
+  //Filtrando por Sigla
+  IF (GrupoFiltro.ItemChecked[2] =  TRUE) THEN
+    BEGIN
+      ano.Enabled     := true;
+    END
+  ELSE IF (GrupoFiltro.ItemChecked[2] =  FALSE) THEN
+    BEGIN
+     ano.Clear;
+      ano.Enabled     := False;
+    END;
+
+  //Filtrando por nucleo
+  IF (GrupoFiltro.ItemChecked[3] =  TRUE) THEN
+    BEGIN
+      tur.Enabled     := true;
+    END
+  ELSE IF (GrupoFiltro.ItemChecked[3] =  FALSE) THEN
+    BEGIN
+     tur.Clear;
+      tur.Enabled := False;
+    END;
+  
+
+
+
+end;
+
+procedure TFRM_BUSTUR.FormCreate(Sender: TObject);
+begin
+inherited;
+SqlOriginal := SQLbustur.CommandText;
+
+end;
+
+procedure TFRM_BUSTUR.bTiMPRIMIRClick(Sender: TObject);
+begin
+  RaveProj.Close;
+  RaveProj.ProjectFile :=  ExtractFilePath(Application.ExeName) + 'Relatorios\RelTurmas.Rav';
+  RaveProj.Open;
+
+  RaveProj.Execute;
+end;
+
+end.
